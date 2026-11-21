@@ -1,0 +1,97 @@
+<p align="center">
+  <a href="https://nodo-cero-bo.github.io">
+    <img src="https://raw.githubusercontent.com/nodo-cero-bo/.github/main/profile/banner.png" width="100%" alt="n8n presenta Nodo Cero, Hackathon n8n Bolivia: la hackathon de la comunidad n8n en Bolivia, enfocada en mujeres, de la mano de Women Techmakers Santa Cruz. Sábado 21 de noviembre de 2026, de 08:00 a 16:00, en el CEA de Santa Cruz.">
+  </a>
+</p>
+
+<h3 align="center">La hackathon de la comunidad n8n en Bolivia, enfocada en mujeres,<br>de la mano de Women Techmakers Santa Cruz.</h3>
+
+<p align="center">
+  Sábado 21 de noviembre de 2026 · 08:00 a 16:00 · Centro de Educación Ambiental (CEA), Santa Cruz de la Sierra
+</p>
+
+<p align="center">
+  <a href="https://nodo-cero-bo.github.io"><b>Página del evento</b></a> ·
+  <a href="https://github.com/nodo-cero-bo/workflows">Workflows</a> ·
+  <a href="https://github.com/nodo-cero-bo/guias">Guías</a> ·
+  <a href="https://github.com/nodo-cero-bo/proyectos/issues/new?template=proyecto.yml">Registrá tu proyecto</a>
+</p>
+
+<br>
+
+**Nodo Cero** es un día para construir automatizaciones y agentes de IA con n8n, en equipos de hasta cuatro personas, y dejarlos funcionando. Acá está todo lo que necesitás para arrancar hoy y seguir construyendo después: workflows listos para importar, guías paso a paso y la vitrina de los proyectos del día.
+
+## Empezá acá
+
+1. **Creá tus cuentas.** Tu cuenta de [n8n Cloud](https://app.n8n.cloud/register) y, según tu idea, Supabase, Clerk o Core Wallet. Las [guías](https://github.com/nodo-cero-bo/guias) te llevan paso a paso.
+2. **Importá un workflow.** Elegí uno en el [catálogo de la página](https://nodo-cero-bo.github.io), tocá «Copiar workflow» y pegalo en el canvas de n8n con Ctrl + V.
+3. **Conectá tus credenciales y probalo.** Cada workflow trae notas adentro que explican qué hace cada paso, por qué y qué credencial pide.
+
+Cuando tu equipo tenga el proyecto andando, [registralo en la vitrina](https://github.com/nodo-cero-bo/proyectos/issues/new?template=proyecto.yml).
+
+## Los repos
+
+| Repo | Para qué sirve |
+|---|---|
+| [**workflows**](https://github.com/nodo-cero-bo/workflows) | Los workflows de n8n del evento, listos para importar: fundamentos, IA, Avalanche Fuji, Clerk, Supabase y proyectos completos. Cada uno con notas que enseñan, su README y un auditor que corre en cada cambio. |
+| [**guias**](https://github.com/nodo-cero-bo/guias) | Crear cuentas, importar workflows, conectar credenciales, ideas de proyecto, cómo presentar y cómo seguir construyendo. |
+| [**proyectos**](https://github.com/nodo-cero-bo/proyectos) | La vitrina: cada equipo registra su proyecto con un formulario y la lista se arma sola. |
+| [**nodo-cero-bo.github.io**](https://github.com/nodo-cero-bo/nodo-cero-bo.github.io) | El código de la [página del evento](https://nodo-cero-bo.github.io): catálogo con filtros y botón «Copiar workflow», guías, Avalanche Fuji a mano, agenda, mentoría y aliados. |
+
+## Agenda del día
+
+| Hora | Qué pasa |
+|---|---|
+| 08:00 | Acreditación y café |
+| 12:30 | Almuerzo, con el apoyo de Clerk |
+| 14:30 | Refrigerio |
+| 15:00 | Presentaciones |
+| 15:45 | Cierre, menciones y foto grupal |
+| 16:00 | Fin |
+
+## Avalanche Fuji, a mano
+
+Hay un track de Avalanche Fuji, con mención especial para los equipos que lo integren.
+
+- [**Descargá Core Wallet**](https://core.app/?utm_source=nodo-cero&utm_medium=github&utm_campaign=hackathon-n8n-bolivia-2026) y activá el modo testnet para pasar a Fuji.
+- [**Pedí AVAX de prueba en el faucet**](https://build.avax.network/console/primary-network/faucet).
+- [**Aprendé en Avalanche Academy**](https://build.avax.network/academy?utm_source=nodo-cero&utm_medium=github&utm_campaign=hackathon-n8n-bolivia-2026): cursos guiados. Si recién empezás, arrancá por Blockchain Fundamentals y seguí con Avalanche Fundamentals, que da certificado.
+- [**Sumate a Team1**](https://www.team1.network/?utm_source=nodo-cero&utm_medium=github&utm_campaign=hackathon-n8n-bolivia-2026), el programa de comunidad de Avalanche.
+- [**Explorá tus transacciones**](https://build.avax.network/explorer/fuji/c-chain) en el explorador de Fuji.
+
+Red: Avalanche Fuji C-Chain · chainId `43113` (`0xa869`) · RPC público `https://api.avax-test.network/ext/bc/C/rpc`
+
+## Con quiénes lo hacemos
+
+<p align="center"><sub>PRESENTA</sub><br><br>
+  <a href="https://n8n.io"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nodo-cero-bo/.github/main/profile/assets/n8n-oscuro.png"><img src="https://raw.githubusercontent.com/nodo-cero-bo/.github/main/profile/assets/n8n-claro.png" height="48" alt="n8n"></picture></a>
+</p>
+
+<p align="center"><sub>CON EL APOYO DE</sub><br><br>
+  <a href="https://supabase.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nodo-cero-bo/.github/main/profile/assets/supabase-oscuro.png"><img src="https://raw.githubusercontent.com/nodo-cero-bo/.github/main/profile/assets/supabase-claro.png" height="30" alt="Supabase"></picture></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://clerk.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nodo-cero-bo/.github/main/profile/assets/clerk-oscuro.png"><img src="https://raw.githubusercontent.com/nodo-cero-bo/.github/main/profile/assets/clerk-claro.png" height="32" alt="Clerk"></picture></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://www.team1.network/?utm_source=nodo-cero&utm_medium=github&utm_campaign=hackathon-n8n-bolivia-2026"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nodo-cero-bo/.github/main/profile/assets/team1-oscuro.png"><img src="https://raw.githubusercontent.com/nodo-cero-bo/.github/main/profile/assets/team1-claro.png" height="30" alt="Team1"></picture></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://www.aspireleaders.org"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nodo-cero-bo/.github/main/profile/assets/aspire-oscuro.png"><img src="https://raw.githubusercontent.com/nodo-cero-bo/.github/main/profile/assets/aspire-claro.png" height="40" alt="Aspire Institute"></picture></a>
+</p>
+
+<p align="center"><sub>EN COLABORACIÓN CON</sub><br><br>
+  <a href="https://www.instagram.com/wtmsantacruz/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nodo-cero-bo/.github/main/profile/assets/wtm-oscuro.png"><img src="https://raw.githubusercontent.com/nodo-cero-bo/.github/main/profile/assets/wtm-claro.png" height="40" alt="Women Techmakers Santa Cruz"></picture></a>
+</p>
+
+<p align="center"><sub>SEDE</sub><br><br>
+  <a href="https://www.santacruz.gob.bo"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nodo-cero-bo/.github/main/profile/assets/gobierno-oscuro.png"><img src="https://raw.githubusercontent.com/nodo-cero-bo/.github/main/profile/assets/gobierno-claro.png" height="40" alt="Gobierno Autónomo Departamental de Santa Cruz"></picture></a>
+</p>
+
+## Enlaces útiles
+
+- [Inscripción en Luma](https://luma.com/n8n-rfgv) (con aprobación)
+- [Documentación de n8n](https://docs.n8n.io) y [cómo importar y exportar workflows](https://docs.n8n.io/build/manage-workflows/export-and-import)
+- [Foro de la comunidad n8n](https://community.n8n.io)
+- [Women Techmakers Santa Cruz en Instagram](https://www.instagram.com/wtmsantacruz/)
+
+<br>
+
+<sub>Workflows y código bajo licencia MIT; guías bajo CC BY 4.0. n8n, Supabase, Clerk, Avalanche, Team1, Aspire Institute, Women Techmakers y el Gobierno Autónomo Departamental de Santa Cruz son marcas de sus dueños: sus logos se usan tal cual para nombrar a quienes hacen posible el evento (el de Aspire Institute, que no tiene versión para fondo oscuro, va sobre una placa clara en el tema oscuro) y no entran en ninguna licencia.</sub>
