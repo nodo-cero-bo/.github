@@ -23,18 +23,35 @@
 
 ## Empezá acá
 
-1. **Creá tus cuentas.** Tu cuenta de [n8n Cloud](https://app.n8n.cloud/register) y, según tu idea, Supabase, Clerk o Core Wallet. Las [guías](https://github.com/nodo-cero-bo/guias) te llevan paso a paso.
+1. **Creá tus cuentas.** Tu cuenta de [n8n Cloud](https://app.n8n.cloud/register) y, según tu idea, Supabase, Clerk, Core Wallet o Google Cloud. Las [guías](https://github.com/nodo-cero-bo/guias) te llevan paso a paso.
 2. **Importá un workflow.** Elegí uno en el [catálogo de la página](https://nodo-cero-bo.github.io), tocá «Copiar workflow» y pegalo en el canvas de n8n con Ctrl + V.
 3. **Conectá tus credenciales y probalo.** Cada workflow trae notas adentro que explican qué hace cada paso, por qué y qué credencial pide.
 
+- **¿Primera vez con n8n?** Seguí el [tutorial paso a paso](https://github.com/nodo-cero-bo/guias/tree/main/tutorial): te dice qué vas a ver en pantalla en cada paso, y no se rompe nada si probás.
+- **¿Una palabra no te suena?** Está explicada en el [glosario](https://github.com/nodo-cero-bo/guias/blob/main/glosario.md).
+- **¿Vas a usar Google Cloud?** La [guía de Google Cloud y créditos](https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/08-google-cloud.md) explica cómo canjear los créditos si tu equipo los recibió o usar el nivel gratuito, cómo poner alertas de presupuesto y cómo apagar todo al terminar. Ojo: desde el 16 de noviembre de 2026, el crédito de bienvenida de la prueba gratis no paga Vertex AI ni la API de Gemini; para IA gratis, usá Gemini con la [clave de Google AI Studio](https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/07-clave-gemini.md).
+
 Cuando tu equipo tenga el proyecto andando, [registralo en la vitrina](https://github.com/nodo-cero-bo/proyectos/issues/new?template=proyecto.yml).
+
+## Las 4 líneas de la hackathon
+
+Cada equipo elige una línea. Tocá cada una para ver su guía.
+
+| Línea | De qué se trata |
+|---|---|
+| [**IA para tu comunidad**](https://github.com/nodo-cero-bo/guias/blob/main/lineas/ia.md) | Agentes y asistentes con Gemini y búsqueda en tus documentos con Supabase. |
+| [**Web3 con Avalanche Fuji**](https://github.com/nodo-cero-bo/guias/blob/main/lineas/web3.md) | Leer la red, verificar pagos, contratos y eventos. Con Team1. |
+| [**Apps con login y datos**](https://github.com/nodo-cero-bo/guias/blob/main/lineas/apps.md) | Clerk, Supabase y n8n como backend. |
+| [**Impacto social y ambiental**](https://github.com/nodo-cero-bo/guias/blob/main/lineas/impacto.md) | Problemas reales de Santa Cruz y de Bolivia. |
+
+**Ganadores y menciones.** Hay 3 equipos ganadores (1.er, 2.º y 3.er lugar) y 2 menciones especiales: **Mejor uso de Avalanche Fuji** y **Mejor uso de Google Cloud**. Cualquier línea puede quedar entre los 3 lugares y postularse a las 2 menciones, desde el formulario de la vitrina.
 
 ## Los repos
 
 | Repo | Para qué sirve |
 |---|---|
-| [**workflows**](https://github.com/nodo-cero-bo/workflows) | Los workflows de n8n del evento, listos para importar: fundamentos, IA, Avalanche Fuji, Clerk, Supabase y proyectos completos. Cada uno con notas que enseñan, su README y un auditor que corre en cada cambio. |
-| [**guias**](https://github.com/nodo-cero-bo/guias) | Crear cuentas, importar workflows, conectar credenciales, ideas de proyecto, cómo presentar y cómo seguir construyendo. |
+| [**workflows**](https://github.com/nodo-cero-bo/workflows) | Los workflows de n8n del evento, listos para importar: fundamentos, IA, Avalanche Fuji, Clerk, Supabase, proyectos completos, Google Cloud y casos de uso. Cada uno con notas que enseñan, su README y un auditor que corre en cada cambio. |
+| [**guias**](https://github.com/nodo-cero-bo/guias) | El tutorial, el glosario, las líneas de la hackathon, crear cuentas, importar workflows, conectar credenciales, ideas de proyecto, cómo presentar y cómo seguir construyendo. |
 | [**proyectos**](https://github.com/nodo-cero-bo/proyectos) | La vitrina: cada equipo registra su proyecto con un formulario y la lista se arma sola. |
 | [**nodo-cero-bo.github.io**](https://github.com/nodo-cero-bo/nodo-cero-bo.github.io) | El código de la [página del evento](https://nodo-cero-bo.github.io): catálogo con filtros y botón «Copiar workflow», guías, Avalanche Fuji a mano, agenda, mentoría y aliados. |
 
@@ -51,7 +68,7 @@ Cuando tu equipo tenga el proyecto andando, [registralo en la vitrina](https://g
 
 ## Avalanche Fuji, a mano
 
-Hay un track de Avalanche Fuji, con mención especial para los equipos que lo integren.
+Es la línea [Web3 con Avalanche Fuji](https://github.com/nodo-cero-bo/guias/blob/main/lineas/web3.md), con Team1, y la mención especial **Mejor uso de Avalanche Fuji**, para el equipo que mejor integre Fuji en su proyecto.
 
 - [**Descargá Core Wallet**](https://core.app/?utm_source=nodo-cero&utm_medium=github&utm_campaign=hackathon-n8n-bolivia-2026) y activá el modo testnet para pasar a Fuji.
 - [**Pedí AVAX de prueba en el faucet**](https://build.avax.network/console/primary-network/faucet).

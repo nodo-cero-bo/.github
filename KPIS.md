@@ -23,8 +23,10 @@ REPOS="workflows guias proyectos nodo-cero-bo.github.io .github"
 | KPI | Para quién | Dónde se mira | Cómo |
 |---|---|---|---|
 | Proyectos presentados | todos | issues con la etiqueta `proyecto` en `proyectos` | sección 2 |
-| Proyectos por tecnología (n8n, IA, Supabase, Clerk, Avalanche Fuji) | Supabase, Clerk, Team1 | etiquetas `n8n`, `ia`, `supabase`, `clerk`, `avalanche-fuji` | sección 2 |
-| Equipos que presentan un proyecto con Fuji | Team1 | etiqueta `avalanche-fuji` y hashes verificados en la red | secciones 2 y 4 |
+| Proyectos por tecnología (n8n, IA, Supabase, Clerk, Avalanche Fuji, Google Cloud) | Supabase, Clerk, Team1 y la organización | etiquetas `n8n`, `ia`, `supabase`, `clerk`, `avalanche-fuji`, `google-cloud` | sección 2 |
+| Equipos por línea (IA para tu comunidad, Web3 con Avalanche Fuji, Apps con login y datos, Impacto social y ambiental) | todos | etiquetas `linea-ia`, `linea-web3`, `linea-apps`, `linea-impacto` (o la respuesta «Línea» del formulario) | sección 2 |
+| Postulaciones a cada mención especial (Mejor uso de Avalanche Fuji, Mejor uso de Google Cloud) | la organización y Team1 | etiquetas `mencion-avalanche-fuji`, `mencion-google-cloud` (o las casillas del formulario) | sección 2 |
+| Equipos que presentan un proyecto con Fuji | Team1 | etiquetas `avalanche-fuji`, `linea-web3` y `mencion-avalanche-fuji`, y hashes verificados en la red | secciones 2 y 4 |
 | Equipos que importaron workflows de Avalanche | Team1 | respuesta «¿Partieron de algún workflow del repo?» y rutas más vistas del repo `workflows` | secciones 1 y 3 |
 | Instalaciones de Core Wallet | Team1 | etiqueta `core-wallet` (lo que declaran los equipos) y analítica de Core con UTM | secciones 2 y 5 |
 | Inscripciones a Avalanche Academy | Team1 | etiqueta `avalanche-academy` y analítica de Academy con UTM | secciones 2 y 5 |
@@ -78,22 +80,45 @@ Lo que este tráfico **no** cuenta, para decirlo de frente en el informe:
 - Las importaciones con «Import from URL» o con el botón «Copiar workflow» de la página: bajan el archivo crudo y GitHub no las registra como visita ni como clon.
 - Las visitas a la página (`nodo-cero-bo.github.io`): GitHub Pages no tiene estadísticas. El tráfico del repo de la página cuenta a quien mira el código, no a quien visita el sitio.
 
-## 2. Proyectos registrados y por tecnología
+## 2. Proyectos registrados, por tecnología, por línea y por mención
 
-Cada equipo registra su proyecto con el formulario de `proyectos`. La automatización Vitrina le pone una etiqueta por cada casilla marcada.
+Cada equipo registra su proyecto con el formulario de `proyectos`. La automatización Vitrina le pone una etiqueta por cada casilla marcada (tecnologías, menciones y ecosistema Avalanche) y una por la línea que eligió en la lista desplegable «Línea».
 Se cuentan los issues **abiertos**: cerrar un issue es la forma de sacar de la vitrina algo que no era un proyecto.
 
 ```bash
 ORG=nodo-cero-bo
 total=$(gh api -X GET search/issues -f q="repo:$ORG/proyectos is:issue is:open label:proyecto" --jq .total_count)
 echo "Proyectos registrados: $total"
-for t in n8n ia supabase clerk avalanche-fuji core-wallet avalanche-academy team1-latam; do
+for t in n8n ia supabase clerk avalanche-fuji google-cloud \
+         linea-ia linea-web3 linea-apps linea-impacto \
+         mencion-avalanche-fuji mencion-google-cloud \
+         core-wallet avalanche-academy team1-latam; do
   n=$(gh api -X GET search/issues -f q="repo:$ORG/proyectos is:issue is:open label:proyecto label:$t" --jq .total_count)
-  printf '%-18s %s\n' "$t" "$n"
+  printf '%-24s %s\n' "$t" "$n"
 done
 ```
 
-Lo mismo se ve en la web: en `github.com/nodo-cero-bo/proyectos/issues`, filtrá por etiqueta (por ejemplo `label:proyecto label:avalanche-fuji`).
+Cómo leerlo:
+
+- **Tecnologías** (`n8n` a `google-cloud`): un proyecto suma en todas las que marcó. `google-cloud` es para los servicios de la consola de Google Cloud (Vertex AI, Natural Language, Translation, Cloud Storage); Gemini con una clave de Google AI Studio cuenta en `ia`.
+- **Líneas** (`linea-*`): cada equipo elige una, así que las cuatro suman el total de proyectos. Si no suman, algún issue se registró antes de que el formulario pidiera la línea: buscalo con `label:proyecto -label:linea-ia -label:linea-web3 -label:linea-apps -label:linea-impacto` y pedile al equipo que edite su ficha.
+- **Menciones** (`mencion-*`): cuántos equipos se postulan a «Mejor uso de Avalanche Fuji» y a «Mejor uso de Google Cloud». Un equipo puede postularse a las dos o a ninguna.
+
+Lo mismo se ve en la web: en `github.com/nodo-cero-bo/proyectos/issues`, filtrá por etiqueta (por ejemplo `label:proyecto label:linea-web3` o `label:proyecto label:mencion-google-cloud`).
+
+Si la Vitrina estuvo apagada y faltan etiquetas, contá directo de lo que respondió cada equipo en el formulario. Equipos por línea:
+
+```bash
+gh issue list --repo "$ORG/proyectos" --label proyecto --state open --limit 500 --json body \
+  --jq 'map(.body | gsub("\r"; "") | (split("### Línea\n")[1] // "" | split("\n###")[0] // "" | gsub("^\\s+|\\s+$"; "")) | if . == "" or . == "_No response_" then "(sin línea)" else . end) | group_by(.) | map("\(length)  \(.[0])") | .[]'
+```
+
+Postulaciones a cada mención especial:
+
+```bash
+gh issue list --repo "$ORG/proyectos" --label proyecto --state open --limit 500 --json body \
+  --jq 'map(.body | split("### ¿A qué mención especial se postula tu equipo? (opcional)")[1] // "" | split("###")[0] // "") as $m | "Mejor uso de Avalanche Fuji: \($m | map(select(test("\\[[xX]\\] Mejor uso de Avalanche Fuji"))) | length)", "Mejor uso de Google Cloud: \($m | map(select(test("\\[[xX]\\] Mejor uso de Google Cloud"))) | length)"'
+```
 
 La lista completa, para una planilla (CSV con número, nombre y etiquetas, sin datos personales):
 
@@ -109,10 +134,10 @@ El formulario pregunta «¿Partieron de algún workflow del repo?» con las cate
 
 ```bash
 gh issue list --repo "$ORG/proyectos" --label proyecto --state open --limit 500 --json body \
-  --jq 'map(.body | split("### ¿Partieron de algún workflow del repo?")[1] // "" | split("###")[0] | select(test("Avalanche Fuji"))) | length'
+  --jq 'map(.body | split("### ¿Partieron de algún workflow del repo?")[1] // "" | split("###")[0] // "" | select(test("Avalanche Fuji"))) | length'
 ```
 
-Cambiá `Avalanche Fuji` por `Supabase`, `Clerk`, `IA`, `Fundamentos` o `Proyectos completos` para las demás categorías.
+Cambiá `Avalanche Fuji` por `Supabase`, `Clerk`, `IA`, `Fundamentos`, `Proyectos completos`, `Google Cloud` o `Casos de uso` para las demás categorías.
 
 ## 4. Hashes de Fuji: verificar que existen y salieron bien
 
@@ -121,7 +146,7 @@ Los equipos que usaron Fuji pueden informar el hash de una transacción. Esto lo
 ```bash
 RPC=https://api.avax-test.network/ext/bc/C/rpc
 gh issue list --repo "$ORG/proyectos" --label proyecto --state open --limit 500 --json number,body \
-  --jq '.[] | .number as $n | (.body | split("### Hash de una transacción en Fuji (opcional)")[1] // "" | split("###")[0] | [scan("0x[0-9a-fA-F]{64}")][0]) as $h | select($h) | "\($n) \($h)"' |
+  --jq '.[] | .number as $n | (.body | split("### Hash de una transacción en Fuji (opcional)")[1] // "" | split("###")[0] // "" | [scan("0x[0-9a-fA-F]{64}")][0]) as $h | select($h) | "\($n) \($h)"' |
 while read -r n h; do
   estado=$(curl -s --ssl-no-revoke -X POST -H 'content-type: application/json' \
     --data "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getTransactionReceipt\",\"params\":[\"$h\"]}" "$RPC" |
@@ -154,7 +179,7 @@ curl -s --ssl-no-revoke -L -o /dev/null -w '%{http_code} %{url_effective}\n' \
 
 ## 6. El informe completo con el workflow 42-reporte-kpis
 
-El repo `workflows` trae `40-proyectos/42-reporte-kpis`, un workflow de n8n que junta todo lo de arriba y devuelve un resumen listo para mandar a Team1, Supabase, Clerk y Aspire Institute: cuenta los issues `proyecto` por tecnología, trae las visitas y clones de los repos con la API de tráfico y verifica en Fuji los hashes informados.
+El repo `workflows` trae `40-proyectos/42-reporte-kpis`, un workflow de n8n que junta todo lo de arriba y devuelve un resumen listo para mandar a Team1, Supabase, Clerk y Aspire Institute: cuenta los issues `proyecto` por tecnología (Google Cloud incluida), los equipos por línea y las postulaciones a cada mención especial, trae las visitas y clones de los repos con la API de tráfico y verifica en Fuji los hashes informados. Lee las respuestas del formulario, así que no depende de que la Vitrina haya puesto las etiquetas.
 
 1. Importalo en n8n con «Import from URL»:
    `https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/40-proyectos/42-reporte-kpis/workflow.json`

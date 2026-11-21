@@ -4,11 +4,11 @@ El repo especial de la organización [nodo-cero-bo](https://github.com/nodo-cero
 
 | Archivo | Qué es |
 |---|---|
-| [`profile/README.md`](profile/README.md) | La portada que GitHub muestra en [github.com/nodo-cero-bo](https://github.com/nodo-cero-bo): banner, los repos, «Empezá acá», agenda, Avalanche Fuji y los logos de quienes hacen posible el evento. |
+| [`profile/README.md`](profile/README.md) | La portada que GitHub muestra en [github.com/nodo-cero-bo](https://github.com/nodo-cero-bo): banner, «Empezá acá» (con el tutorial, el glosario y la guía de Google Cloud), las 4 líneas, ganadores y menciones, los repos, agenda, Avalanche Fuji y los logos de quienes hacen posible el evento. |
 | `profile/banner.png` y `profile/assets/` | El banner (1600 × 500) y los logos oficiales en dos versiones, para el tema oscuro y el claro de GitHub. |
 | [`KPIS.md`](KPIS.md) | Para quienes organizan: cómo medir los KPIs del evento después del sábado, con comandos de `gh` y el workflow `42-reporte-kpis`. No se muestra en el perfil. |
 | [`tools/cabeceras.py`](tools/cabeceras.py) | Dibuja el banner, las imágenes de cabecera de cada repo (1280 × 640, también sirven como vista previa social) y los logos del perfil (con una copia en `guias/assets/aliados/`), y audita cada pieza: zona segura, textos cortados, contraste, peso de los logos frente a n8n y tamaño de archivo. |
-| [`tools/readme_workflows.py`](tools/readme_workflows.py) | Arma la tabla del catálogo del README de `workflows` a partir de los `meta.json`. |
+| [`tools/readme_workflows.py`](tools/readme_workflows.py) | Arma la tabla del catálogo del README de `workflows` a partir de los `meta.json`, con las líneas de cada workflow. |
 
 ## Regenerar las imágenes
 
