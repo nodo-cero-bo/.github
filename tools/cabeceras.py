@@ -420,7 +420,7 @@ FLUJOS = {
 
 TEXTOS = {
     'workflows': dict(cap=[('Workflows', 'rosa'), ('Listos para importar', 'gris')], titulo='Workflows',
-                      bajada='Fundamentos, IA, Avalanche Fuji, Clerk y Supabase: copialos, importalos y seguí construyendo.',
+                      bajada='Fundamentos, IA, Google Cloud, Avalanche Fuji, Clerk, Supabase y casos de uso: copialos, importalos y seguí construyendo.',
                       url=f'github.com/{ORG}/workflows'),
     'guias': dict(cap=[('Guías', 'rosa'), ('Paso a paso', 'gris')], titulo='Guías',
                   bajada='Creá tus cuentas, importá workflows, conectá credenciales y presentá tu proyecto.',
